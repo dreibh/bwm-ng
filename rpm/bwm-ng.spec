@@ -1,12 +1,11 @@
 Name:           bwm-ng
-Version:        0.6.1
-Release:        8%{?dist}
+Version:        0.6.2~td1.0
+Release:        1%{?dist}
 Summary:        Bandwidth Monitor NG
 License:        GPLv2+
 URL:            http://www.volker-gropp.de/?id=projects&sub=bwm-ng
 Source0:        http://www.volker-gropp.de/bwm-ng/%{name}-%{version}.tar.gz
 Source1:        bwm-ng.conf
-Patch0:         bwm-ng-0.6.1-static-inline.patch
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  gcc
@@ -18,7 +17,7 @@ Requires:       procps
 A small and simple console-based live network and disk io bandwidth monitor.
 
 Features:
-- Supports /proc/net/dev, netstat, getifaddr, sysctl, kstat, /proc/diskstats 
+- Supports /proc/net/dev, netstat, getifaddr, sysctl, kstat, /proc/diskstats
 /proc/partitions, IOKit, devstat and libstatgrab
 - Unlimited number of interfaces/devices supported
 - Interfaces/devices are added or removed dynamically from list
@@ -29,7 +28,6 @@ Features:
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %configure --enable-64bit \
@@ -140,7 +138,7 @@ Resolves: rhbz#1423286 bwm-ng: FTBFS in rawhide
 
 * Tue Aug 21 2007 Patrick "Jima" Laughton <jima@beer.tclug.org> - 0.6-2
 - Rebuild for BuildID
-- License clarification 
+- License clarification
 
 * Fri Mar 16 2007 Patrick "Jima" Laughton <jima@beer.tclug.org> - 0.6-1
 - Update
