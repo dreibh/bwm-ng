@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/architecture.mk
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+ifneq ($(DEB_BUILD_ARCH),$(DEB_HOST_ARCH))
+CONFIGURE_FLAGS =
+ifeq ($(DEB_HOST_ARCH_OS),linux)
+CONFIGURE_FLAGS += --with-diskstats --with-procnetdev
+endif
+ifeq ($(DEB_HOST_ARCH_OS),kfreebsd)
+CONFIGURE_FLAGS += --with-partitions --with-procnetdev
+endif
+endif
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(CONFIGURE_FLAGS)

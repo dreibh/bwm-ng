@@ -1,0 +1,152 @@
+bwm-ng (0.6.2~td1.0-1ubuntu1) cosmic; urgency=high
+
+  * New release.
+
+ -- Thomas Dreibholz <dreibh@iem.uni-due.de>  Tue, 27 Nov 2018 08:08:08 +0800
+
+bwm-ng (0.6.1-5) unstable; urgency=medium
+
+  * d/rules: add override_dh_auto_configure to fix FTCBFS (closes: #875882)
+
+ -- Samuel Henrique <samueloph@gmail.com>  Sat, 14 Oct 2017 10:39:53 -0300
+
+bwm-ng (0.6.1-4) unstable; urgency=medium
+
+  * Bump Standards-Version to 4.1.1
+  * d/control: Fix typo on Vcs-Git field
+  * d/rules: pass correct flags when crossbuilding (closes: #875882)
+    thanks to Helmut Grohne <helmut@subdivi.de>
+
+ -- Samuel Henrique <samueloph@gmail.com>  Thu, 12 Oct 2017 19:34:44 -0300
+
+bwm-ng (0.6.1-3) unstable; urgency=medium
+
+  * Bump Standards-Version to 4.0.1.
+  * d/control: Add collab-maint Vcs-* fields.
+  * d/copyright: Update packaging copyright to 2017.
+  * d/patches: Use-static-inline-instead-of-inline: New patch to fix ftbfs
+    with gcc7, thanks to everyone who helped on the bugreport
+    (closes: #853339).
+
+ -- Samuel Henrique <samueloph@gmail.com>  Sat, 19 Aug 2017 11:09:54 -0300
+
+bwm-ng (0.6.1-2) unstable; urgency=medium
+
+  * debian/control: Build-Depends: Remove libstatgrab-dev, no longer default
+    upstream, we can now build on hurd and kfreebsd.
+
+ -- Samuel Henrique <samueloph@gmail.com>  Tue, 25 Oct 2016 18:04:47 -0200
+
+bwm-ng (0.6.1-1) unstable; urgency=medium
+
+  * New Maintainer, thanks for those who worked previously on this package
+    (closes: #838041).
+  * New upstream release:
+    - Check return values of fgets and use a format string to print a variable
+      (closes: #506503).
+    - Fix to work with libstatgrab-0.90 (closes: #746014, LP: #1502593).
+    - Fix g++5 warnings and errors (closes: #757167).
+    - Fix nan and inf values on fast refresh (closes: #532331).
+  * Bump DH level to 10.
+  * Bump Standards-Version to 3.9.8.
+  * Bump watch to v4.
+  * Ack NMUs:
+    - Drop deprecated dpatch depends and upgrade to packaging format
+      "3.0 quilt" (closes: #670802).
+    - Fix "ftbfs with GCC-5": adopt changes from Ubuntu (closes: #777808).
+  * debian/copyright: Convert to DEP-5.
+  * debian/patches:
+    - 01_not_a_string_literal.patch: Remove patch, applied upstream.
+    - typos.patch: New patch to address typos, sent upstream.
+  * debian/rules:
+    - Convert to a simpler system, using "dh $@".
+    - Export DEB_BUILD_MAINT_OPTIONS = hardening=+all, to enable
+      all hardening flags.
+  * debian/watch: Remove comment.
+  * wrap-and-sort -a.
+
+ -- Samuel Henrique <samueloph@gmail.com>  Tue, 11 Oct 2016 01:00:29 -0300
+
+bwm-ng (0.6-3.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix "ftbfs with GCC-5": adopt changes from Ubuntu:
+    - Fix causes of "warning: format not a string literal and no format
+      arguments" in src/output.c which were causing a strange message of
+      'cc1: error: unrecognized command line option "-Wno-long-double"'
+    - Check return value of fgets in src/input/proc_diskstats.c which
+      led to the same error as above.
+    Additionally add "-std=gnu89" to CFLAGS in debian/rules.
+    (Closes: #777808)
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 19 Jul 2015 19:01:18 +0200
+
+bwm-ng (0.6-3.1) unstable; urgency=low
+
+  * Non-maintainer upload; ACKed by the maintainer.
+  * Drop deprecated dpatch depends and upgrade to packaging format "3.0 quilt"
+    (Closes: #670802).
+  * Update to Standards-Version to 3.9.3 and debhelper to 9.
+  * Add build-arch and build-indep targets; use dh_prep in rules file.
+  * Fix copyright-without-copyright-notice (Lintian).
+  * Fix debian-rules-ignores-make-clean-error (Lintian).
+  * Fix no-homepage-field (Lintian).
+
+ -- Jari Aalto <jari.aalto@cante.net>  Sun, 06 May 2012 16:09:08 +0300
+
+bwm-ng (0.6-3) unstable; urgency=low
+
+  * Update to current menu policy (Closes: #496095)
+    - Thanks to Bill Allombert
+
+ -- Damián Viano <des@debian.org>  Fri, 29 Aug 2008 18:56:18 -0300
+
+bwm-ng (0.6-2) unstable; urgency=low
+
+  * Improve cleanup after build
+
+ -- Damián Viano <des@debian.org>  Thu, 19 Apr 2007 22:50:14 -0300
+
+bwm-ng (0.6-1) unstable; urgency=low
+
+  * New upstream release.
+  * Change maintainer mail address.
+  * Update standards versions to 3.7.2, no changes needed.
+  * Remove patches applied upstream:
+    - 01man_typos.dpatch
+    - 02bwm-ng.conf-example_typo.dpatch
+    - 03use_bwm-ng.conf_not_.con.dpatch
+
+ -- Damián Viano <des@debian.org>  Thu, 19 Apr 2007 22:09:10 -0300
+
+bwm-ng (0.5-4) unstable; urgency=medium
+
+  * Added patches/03use_bwm-ng.conf_not_.con.dpatch patch to correctly
+    use ~/.bwm-ng.conf instead of ~/.bwm-ng.con.  Thanks to Rafal Krypa for
+    the report and the initial patch (Closes: #403099)
+  * Added patches/02bwm-ng.conf-example_typo.dpatch to fix small typo, hinted
+    by upstream.
+
+ -- Damián Viano <debian@damianv.com.ar>  Thu, 14 Dec 2006 15:33:59 -0300
+
+bwm-ng (0.5-3) unstable; urgency=low
+
+  * Added missing build-dependency on ncurses allowing curses output mode.
+    (Closes: #362082)
+  * Added further corrections to patches/01man_typos.dpatch. Thanks A. Costa
+    for his thorough eye.
+
+ -- Damián Viano <debian@damianv.com.ar>  Sun, 16 Apr 2006 10:44:14 -0300
+
+bwm-ng (0.5-2) unstable; urgency=low
+
+  * Applied patches/01man_typos.dpatch fixing manpage typos (Closes: #362081)
+  * Compiling missing ncurses support (Closes: #362082)
+
+ -- Damián Viano <debian@damianv.com.ar>  Fri, 14 Apr 2006 20:00:59 -0300
+
+bwm-ng (0.5-1) unstable; urgency=low
+
+  * Initial release. (Closes: bug#354896)
+
+ -- Damián Viano <debian@damianv.com.ar>  Tue, 28 Feb 2006 21:10:10 -0300

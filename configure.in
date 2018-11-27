@@ -1,7 +1,7 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-AC_INIT([bwm-ng],[0.6.1],[bwmng@gropp.org],[bwm-ng])
+AC_INIT([bwm-ng],[0.6.2~td1.0],[bwmng@gropp.org],[bwm-ng])
 AC_CONFIG_SRCDIR(src/bwm-ng.c)
 AM_INIT_AUTOMAKE([gnu])
 AC_CONFIG_HEADERS(config.h)
@@ -40,7 +40,7 @@ if [ test $withval != "no" ]; then
     CURSES_CHECKED="1"
 else
     CURSES_CHECKED="1"
-fi  
+fi
 ])
 
 
@@ -254,7 +254,7 @@ if [ test $withval != "no" ]; then
 									 ],[ CPPFLAGS=$OLD_CPPFLAGS ],[#include <sys/disk.h>])
 								],[#include <sys/disk.h>])
 		],[ CPPFLAGS=$OLD_CPPFLAGS ])
-						  
+
     ],[ CPPFLAGS=$OLD_CPPFLAGS ])
 fi
 ],[
@@ -293,7 +293,7 @@ if [ test $withval != "no" ]; then
     AC_CHECK_LIB([kstat],[kstat_open],[
       AC_DEFINE_UNQUOTED([HAVE_LIBKSTAT],[1],[Define to 1 if you have the 'kstat' library (-lkstat).])
       LIBS="$LIBS -lkstat"
-		DISK_INPUT_FOUND=1	
+		DISK_INPUT_FOUND=1
 		INPUT_SYSTEM="$INPUT_SYSTEM libkstat.$OBJEXT"
 		INPUT_FOUND=1
 	],[ CPPFLAGS=$OLD_CPPFLAGS ])
@@ -377,7 +377,7 @@ else
     fi
 fi
 ],[
-if test "$cross_compiling" != yes; then	
+if test "$cross_compiling" != yes; then
 	AC_CHECK_FILES([/proc/diskstats],[
 						 DISK_INPUT_FOUND=1
 						 INPUT_SYSTEM="$INPUT_SYSTEM proc_diskstats.$OBJEXT"
@@ -640,7 +640,7 @@ if [ test $withval != "no" ]; then
 		  if [ test $NETSTAT_ADDED -eq 0 ]; then
 			 INPUT_SYSTEM="$INPUT_SYSTEM netstat.$OBJEXT"
 			 NETSTAT_ADDED=1
-		  fi 
+		  fi
     fi
     if [ test $NETSTAT_LINK != "0" ]; then
         AC_DEFINE_UNQUOTED([NETSTAT_BSD_LINK],[1],[use bsd like netstat with link switch])
@@ -650,7 +650,7 @@ if [ test $withval != "no" ]; then
 			 NETSTAT_ADDED=1
 		 fi
     fi
-else 
+else
     NETSTAT_DEFINED="1"
     echo "disable netstat: bsd like version"
 fi
@@ -775,7 +775,7 @@ if [ test "${EGREP}" ]; then
 							 INPUT_SYSTEM="$INPUT_SYSTEM netstat.$OBJEXT"
 							 NETSTAT_ADDED=1
 						 fi
-                else 
+                else
                     net_test=`${NETSTAT_CMD} -ibd 2>/dev/null | ${EGREP} "Name +Mtu +Network +Address +Ibytes +Obytes +Drop"`
                     if [ test "${net_test}" ]; then
                         AC_MSG_RESULT([Net/OpenBSD version found])
