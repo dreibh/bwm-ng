@@ -2,7 +2,9 @@ Source: bwm-ng
 Section: net
 Priority: optional
 Maintainer: Samuel Henrique <samueloph@gmail.com>
-Build-Depends: debhelper (>= 9),
+Build-Depends: autoconf,
+               automake,
+               debhelper (>= 9),
                libncurses5-dev
 Standards-Version: 4.2.1
 Homepage: http://www.gropp.org/?id=projects&sub=bwm-ng
