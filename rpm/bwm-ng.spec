@@ -1,8 +1,8 @@
 Name:           bwm-ng
-Version:        0.6.3~td1.0
-Release:        1%{?dist}
+Version:        0.6.3+nmu1~td1.0
+Release:        1
 Summary:        Bandwidth Monitor NG
-License:        GPLv2+
+License:        GPL-2+
 URL:            http://www.volker-gropp.de/?id=projects&sub=bwm-ng
 Source0:        http://www.volker-gropp.de/bwm-ng/%{name}-%{version}.tar.gz
 Source1:        bwm-ng.conf

@@ -1,8 +1,9 @@
-bwm-ng (0.6.3~td1.0-1ubuntu1) cosmic; urgency=high
+bwm-ng (0.6.3+td1-1ubuntu1) unstable; urgency=medium
 
+  * Non-maintainer upload (NMU).
   * New release.
 
- -- Thomas Dreibholz <dreibh@iem.uni-due.de>  Wed, 20 Feb 2019 08:08:08 +0800
+ -- Thomas Dreibholz <dreibh@iem.uni-due.de>  Thu, 08 Aug 2019 11:38:36 +0200
 
 bwm-ng (0.6.1-5) unstable; urgency=medium
 
