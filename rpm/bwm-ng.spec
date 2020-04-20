@@ -1,5 +1,5 @@
 Name:           bwm-ng
-Version:        0.6.3+nmu1~td1.0
+Version:        0.6.3+td1
 Release:        1
 Summary:        Bandwidth Monitor NG
 License:        GPL-2+
