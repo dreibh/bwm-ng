@@ -6,7 +6,7 @@ Build-Depends: autoconf,
                automake,
                debhelper (>= 9),
                libncurses5-dev
-Standards-Version: 4.4.0.1
+Standards-Version: 4.5.0.3
 Rules-Requires-Root: no
 Homepage: http://www.gropp.org/?id=projects&sub=bwm-ng
 
