@@ -1,5 +1,5 @@
 Name:           bwm-ng
-Version:        0.6.3+td3
+Version:        0.6.3
 Release:        1
 Summary:        Bandwidth Monitor NG
 License:        GPL-2+
@@ -55,6 +55,8 @@ install -pDm644 bwm-ng.1 %{buildroot}%{_mandir}/man1/bwm-ng.1
 %{_mandir}/man1/bwm-ng.1*
 
 %changelog
+* Fri Nov 13 2020 Thomas Dreibholz <dreibh@iem.uni-due.de> - 0.6.3
+- New upstream release.
 * Thu Jul 12 2018 Fedora Release Engineering <releng@fedoraproject.org> - 0.6.1-8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 

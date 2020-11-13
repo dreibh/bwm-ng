@@ -1,10 +1,10 @@
-bwm-ng (0.6.3+td3-1ubuntu1) unstable; urgency=medium
+bwm-ng (0.6.3-1ubuntu1) unstable; urgency=medium
 
   * Non-maintainer upload (NMU).
   * New release.
   * debian/control: Updated standards version to 4.5.0.3.
 
- -- Thomas Dreibholz <dreibh@iem.uni-due.de>  Wed, 11 Nov 2020 22:16:37 +0100
+ -- Thomas Dreibholz <dreibh@iem.uni-due.de>  Fri, 13 Nov 2020 19:01:19 +0100
 
 bwm-ng (0.6.1-5) unstable; urgency=medium
 
